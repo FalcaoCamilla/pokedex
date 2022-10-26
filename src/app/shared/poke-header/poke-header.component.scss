@@ -1,0 +1,12 @@
+@import '../../../scss/rem-calc.scss';
+
+//host para indicar que as tags utilizadas são somente desse component
+:host{
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: rem-calc(40) 0;
+    }
+}
