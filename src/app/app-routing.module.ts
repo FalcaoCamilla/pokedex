@@ -3,8 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {path: '', loadChildren: () => import('./pages/pages.module').then(p => p.PagesModule)}
-  //utilizando os caminhos carregados do routing.module, que foi importado pelo pages.module (observar comportamento do app.module e app-routing.module)
 ];
+/*
+A aplicação utiliza os caminhos carregados do pages.module,
+Eles, no entanto, foram importados pelo módulo de rotas routing.module, 
+que concentra as páginas principais da aplicação por meio das rotas propriamente ditas (routes - path)
+*/
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)], //forRoot para o routing principal

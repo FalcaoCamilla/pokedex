@@ -5,11 +5,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 
-//rotas de todas as páginas (/pages)
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'details', component: DetailsComponent}
 ];
+/*
+Rotas de todas as páginas principais.
+Nelas, serão carregados os components genéricos através de seus seletores.
+*/
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

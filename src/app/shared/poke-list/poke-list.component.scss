@@ -1,0 +1,83 @@
+@import '../../../scss/rem-calc.scss';
+@import '../../../scss/variables.scss';
+
+/*
+Criando variável padding, declarada por meio do $
+Ela recebe 20px e através da função rem-calc, no primeiro import, o transforma em rem.
+Isso facilita autilização de rem, já que esses valores podem não ser exatos e tornaria trabalhoso calculá-los manualmente
+*/
+$padding: rem-calc(20);
+
+//O host define que somente os elementos do atual component terá esse estilo atribuído
+:host{
+    /*
+    Os estilos definidos apenas no host, sem qualquer seletor prévio,
+    indica que devem ser aplicados a todo o component
+    */
+    display: flex;
+    justify-content: space-between; //No caso desse html, cabe para cada section
+
+    padding: $padding 0;
+
+    .pokemon{
+        position: relative;
+        display: flex;
+        background: var(--branco);
+
+        width: calc(49% - 2.5rem); //Função do próprio sass para calcular valores. Aqui, a escolha do 49% foi dada somente para seguir a risca o projeto do Figma.
+        height: rem-calc(157 - 40);
+        padding: $padding;
+
+        border-radius: rem-calc(10);
+
+        //O & concatena a classe pai. O resultado da classe pokemon seguido por &_status seria, então, pokemon_status
+        &_status{
+            h2{
+                font-size: rem-calc(22);
+                font-style: italic;
+                font-weight: 700;
+
+                margin-bottom: rem-calc(10);
+            }
+
+            ul{
+                display: flex;
+                flex-direction: column;
+
+                li{
+                    background: var(--cinza);
+                    font-size: rem-calc(10);
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    border-radius: rem-calc(50);
+
+                    width: rem-calc(60);
+                    margin-bottom: rem-calc(5);
+                }
+            }
+        }
+
+        //O & concatena a classe pai. O resultado da classe pokemon seguido por &_image seria, então, pokemon_image
+        &_image{
+            position: absolute;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            right: $padding; //estudar*
+            bottom: $padding; //estudar*
+
+            height: rem-calc(90);
+            width: rem-calc(110);
+            background: url(../../../assets/bg/bg-list-pokemon.svg) no-repeat;
+        
+            img{
+                width: rem-calc(80);
+            }
+        }
+    }
+}
