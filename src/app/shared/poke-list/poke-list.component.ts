@@ -8,13 +8,17 @@ import { PokeAPIService } from 'src/app/services/poke-api.service';
 })
 export class PokeListComponent implements OnInit {
 
+  public getAllPokemons: any;
+
   constructor(private PokeApiService: PokeAPIService){
 
   }
 
   ngOnInit(): void {
     this.PokeApiService.apiListAllPokemons.subscribe(
-      res => res
+      res => {
+        this.getAllPokemons = res.results;
+      }
     );
     //Ao utilizar o get, não é necessário passar qualquer valor como parâmetro
   }
