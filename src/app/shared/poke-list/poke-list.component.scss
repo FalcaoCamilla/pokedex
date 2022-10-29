@@ -26,6 +26,8 @@ $padding: rem-calc(20);
         display: flex;
         background: var(--branco);
 
+        box-shadow: rem-calc(2) rem-calc(2) rem-calc(4) var(--cinza-escuro);
+
         width: calc(49% - 2.5rem); //Função do próprio sass para calcular valores. Aqui, a escolha do 49% foi dada somente para seguir a risca o projeto do Figma.
         height: rem-calc(157 - 40);
 
@@ -40,12 +42,12 @@ $padding: rem-calc(20);
         //O & concatena a classe pai. O resultado da classe pokemon seguido por &_status seria, então, pokemon_status
         &_status{
             h2{
-                font-size: rem-calc(22);
+                font-size: rem-calc(24);
                 font-style: italic;
                 font-weight: 700;
                 text-transform: capitalize; //Primeira maiúscula
 
-                margin-bottom: rem-calc(10);
+                margin-bottom: rem-calc(13);
             }
 
             ul{
@@ -54,7 +56,7 @@ $padding: rem-calc(20);
 
                 li{
                     background: var(--cinza);
-                    font-size: rem-calc(10);
+                    font-size: rem-calc(17);
 
                     display: flex;
                     justify-content: center;
@@ -62,8 +64,12 @@ $padding: rem-calc(20);
 
                     border-radius: rem-calc(50);
 
-                    width: rem-calc(60);
+                    width: rem-calc(80);
+                    padding: rem-calc(8);
                     margin-bottom: rem-calc(5);
+                }
+                li:hover{
+                  color: var(--secondary-color);
                 }
             }
         }
