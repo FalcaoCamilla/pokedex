@@ -33,6 +33,9 @@ $padding: rem-calc(20);
 
         border-radius: rem-calc(10);
 
+        text-decoration: none;
+        color: var(--primary-color);
+
         //O & concatena a classe pai. O resultado da classe pokemon seguido por &_status seria, então, pokemon_status
         &_status{
             h2{
