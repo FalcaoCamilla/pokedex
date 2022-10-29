@@ -10,10 +10,11 @@ $padding: rem-calc(20);
 
 //O host define que somente os elementos do atual component terá esse estilo atribuído
 :host{
-    /*
+   /*
     Os estilos definidos apenas no host, sem qualquer seletor prévio,
     indica que devem ser aplicados a todo o component
     */
+  .list{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; //No caso desse html, cabe para cada section
@@ -87,4 +88,6 @@ $padding: rem-calc(20);
             }
         }
     }
+  }
 }
+

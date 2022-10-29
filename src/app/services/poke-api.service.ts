@@ -11,12 +11,17 @@ import { map, tap } from 'rxjs/operators';
 export class PokeAPIService {
 
   private url: string = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=100'
+  //API externa para consulta de pokemons
 
-  constructor(private http: HttpClient){
+  constructor(private http: HttpClient){}
 
-  }
-
-  get apiListAllPokemons(): Observable<any>{ //Um acessador get não recebe parâmetros
+  get apiListAllPokemons(): Observable<any>{
+    /*
+    Um acessador get não recebe parâmetros
+    O uso do Observable permite que cada alteração seja percebida e, então, notificada
+    o subscribe por sua vez permite que a aprtir dessa notificação, algo seja tratado e armazenado,
+    seja um erro ou uma resposta válida
+    */
     return this.http.get<any>(this.url).pipe(
       tap(res => res),
       tap(res => {

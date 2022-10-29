@@ -1,4 +1,12 @@
 <form>
-  <input type="text" placeholder="Buscar Pokemon...">
+  <input type="text" #input (keyup)="search(input.value)" placeholder="Buscar Pokemon...">
+  <!--
+    Graças ao Output no poke-search.ts, é possível passar os valores de entrada
+    facilmente entre o tsc e utilizá-lo em quantas funções forem necessárias.
+    Isso é feito da seguinte forma:
+    Ao input acima foi atribuída uma "variável" chamada input (#input),
+    que tem seu valor passado como parâmetro da função search, no ts do component,
+    acionada pelo evento (keyup).
+  -->
   <img src="assets/icons/search.svg" alt="Buscar Pokemon">
 </form>
