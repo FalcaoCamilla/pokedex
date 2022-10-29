@@ -1,4 +1,8 @@
-<poke-search></poke-search>
+<poke-search (emitSearch)="getSearch($event)"></poke-search>
+<!--
+  No component da lista, chamado pelo component home (principal), também é chamado o component de busca.
+  No próprio seletor é possível receber o output (emitSearch)
+-->
 
 <section class="list">
   <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
